@@ -17,36 +17,28 @@
       <thead>
         <tr>
           <th>Nombre</th>
-          <th>Historial Crediticio</th>
-          <th>Direccion</th>
-          <th>Ciudad</th>
-          <th>Provincia</th>
-           <th>Pais</th>
+        
           <th>Codigo Postal</th>
         </tr>
       </thead>
       <tbody>
         <?php
-      
-      <?php
-      
-      
-     
-      $cadenaSQL = "SELECT * FROM cliente WHERE historial_crediticio = 'Excelente' AND ciudad = 'Harrison'";
-      $resultado = mysqli_query($conexion, $cadenaSQL);
-      
-      while ($fila = mysqli_fetch_object($resultado)) {
-        echo "<tr><td> " . $fila->nombre .
-        "</td><td>" . $fila->historial_crediticio .
-        "</td><td>" . $fila->direccion .
-        "</td><td>" . $fila->ciudad .
-        "</td><td>" . $fila->provincia .
-        "</td><td>" . $fila->pais .
-        "</td><td>" . $fila->codigo_postal .
-        "</td></tr>";
-      }
-      ?>
 
+        $conexion = mysqli_connect(getenv('34.29.184.159'), getenv('root'), getenv(''), "lunes");
+
+        $cadenaSQL = "select * from cliente";
+        $resultado = mysqli_query($conexion, $cadenaSQL);
+
+        while ($fila = mysqli_fetch_object($resultado)) {
+         echo "<tr><td> " .$fila->nombre . 
+         "</td><td>" . $fila->historial_crediticio .
+         "</td><td>" . $fila->direccion .
+         "</td><td>" . $fila->ciudad .
+         "</td><td>" . $fila->provincia .
+         "</td><td>" . $fila->pais .
+         "</td><td>" . $fila->codigo_postal .
+         "</td></tr>";
+       }
        ?>
      </tbody>
    </table>
@@ -56,4 +48,3 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
-
