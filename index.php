@@ -28,7 +28,7 @@
       <tbody>
         <?php
 
-        $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "UNS");
+        $conexion = mysqli_connect(getenv('34.29.184.159'), getenv('root'), getenv(''), "lunes");
 
         $cadenaSQL = "select * from cliente";
         $resultado = mysqli_query($conexion, $cadenaSQL);
