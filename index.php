@@ -29,7 +29,7 @@
         <?php
       
       <?php
-      $conexion = mysqli_connect(getenv('34.29.184.159'), getenv('root'), getenv(''), "lunes");
+      
       
      
       $cadenaSQL = "SELECT * FROM cliente WHERE historial_crediticio = 'Excelente' AND ciudad = 'Harrison'";
