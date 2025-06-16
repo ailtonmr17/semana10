@@ -27,23 +27,26 @@
       </thead>
       <tbody>
         <?php
+      
+      <?php
+      $conexion = mysqli_connect(getenv('34.29.184.159'), getenv('root'), getenv(''), "lunes");
+      
+     
+      $cadenaSQL = "SELECT * FROM cliente WHERE historial_crediticio = 'Excelente' AND ciudad = 'Harrison'";
+      $resultado = mysqli_query($conexion, $cadenaSQL);
+      
+      while ($fila = mysqli_fetch_object($resultado)) {
+        echo "<tr><td> " . $fila->nombre .
+        "</td><td>" . $fila->historial_crediticio .
+        "</td><td>" . $fila->direccion .
+        "</td><td>" . $fila->ciudad .
+        "</td><td>" . $fila->provincia .
+        "</td><td>" . $fila->pais .
+        "</td><td>" . $fila->codigo_postal .
+        "</td></tr>";
+      }
+      ?>
 
-        $conexion = mysqli_connect(getenv('34.29.184.159'), getenv('root'), getenv(''), "lunes");
-
-        // Solo mostrar clientes con pais = 'US'
-        $cadenaSQL = "SELECT * FROM cliente WHERE Pais = 'US'";
-        $resultado = mysqli_query($conexion, $cadenaSQL);
-        
-        while ($fila = mysqli_fetch_object($resultado)) {
-          echo "<tr><td> " . $fila->nombre .
-          "</td><td>" . $fila->historial_crediticio .
-          "</td><td>" . $fila->direccion .
-          "</td><td>" . $fila->ciudad .
-          "</td><td>" . $fila->provincia .
-          "</td><td>" . $fila->pais .
-          "</td><td>" . $fila->codigo_postal .
-          "</td></tr>";
-        }
        ?>
      </tbody>
    </table>
