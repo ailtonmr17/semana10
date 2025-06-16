@@ -21,7 +21,7 @@
           <th>Direccion</th>
           <th>Ciudad</th>
           <th>Provincia</th>
-          
+           <th>Pais</th>
           <th>Codigo Postal</th>
         </tr>
       </thead>
